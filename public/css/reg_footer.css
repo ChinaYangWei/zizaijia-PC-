@@ -1,0 +1,16 @@
+.reg_footer{
+    line-height:38px;
+    display:flex;
+    justify-content:space-around;
+}
+.reg_footer img{
+    vertical-align:middle;
+}
+.reg_footer div{
+    float:right;
+    font-size:12px;
+}
+.reg_footer div a{
+    color:rgb(80,80,80);
+    text-decoration: none;
+}

@@ -1,0 +1,37 @@
+.cart-value{
+  padding: 160px 0px 100px;
+  background:#ececec;
+  text-align: center;
+}
+.center-cart{
+  font-weight: 400;
+  font-size: 2rem;
+}
+.center-p{
+  padding:20px 0px;
+  font-size: 18px;
+  text-align: center;
+}
+.addcart{
+  height: 48px;
+  border-radius: 55px;
+  background: rgb(94,223,154);
+  line-height: 48px;
+  width: 318px;
+  margin: 0 auto;
+  color: #fff;
+  margin-top:60px;
+}
+.addcart>a{
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+}
+.addcart:hover{
+  background: rgb(255,255,255);
+  border: 1px solid rgb(94,223,154);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.addcart:hover>a{
+  color: rgb(94,223,154);
+}

@@ -1,11 +1,15 @@
 .cart-value{
   padding: 160px 0px 100px;
   background:#ececec;
-  text-align: center;
+  width:1210px;
+  margin: 0 auto;
 }
 .center-cart{
   font-weight: 400;
   font-size: 2rem;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
 }
 .center-p{
   padding:20px 0px;

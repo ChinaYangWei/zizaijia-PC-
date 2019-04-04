@@ -31,26 +31,25 @@ xhr.onreadystatechange=function(){
     var html="";
     $("product_nb").innerHTML="家具("+jiaju.length+")"
     for(var i=0;i<jiaju.length;i++){
-      // //判断是否为新品
-      // if(jiaju[i].jiaju_newProduct==1){
-      //   var old_date=new Date(jiaju[0].jiaju_newTime);
-      //   var old_year=old_date.getFullYear();
-      //   var old_month=old_date.getMonth()+1;
-      //   var old_day=old_date.getDay();
-      //   // 复制一份数据库存入的时间
-      //   var now_date=new Date(old_year,old_month,old_day);
-      //   var new_date=new Date();
-      //   // 拿当前时间减去数据库存入时间，得到毫秒数，再获得差值的天数，判断是否大于30天
-      //   if(parseInt((new_date.getTime()-now_date.getTime())/(1000*60*60*24))>30){
-      //     var jiaju_id=jiaju[i].jiaju_id;
-      //     var revise=createXhr();
-      //     revise.onreadystatechange=function(){
-      //     }
-      //     revise.open("get","http://127.0.0.1:3000/product/revise?jiaju_id="+jiaju_id+"&jiaju_newProduct=0");
-      //     revise.send(null);
-      //   }
-      //     console.log((new_date-now_date)/(1000*60*60*24))
-      // }
+      //判断是否为新品
+      if(jiaju[i].jiaju_newProduct==1){
+        // 获得数据库的时间
+        var sql_date=new Date(jiaju[i].jiaju_newTime);
+        sql_date=Date.parse(sql_date)
+        // 获得当前时间
+        var new_date=new Date();
+        new_date=Date.parse(new_date)
+        // 拿当前时间减去数据库存入时间，得到毫秒数，再获得差值的天数，判断是否大于30天
+        if(parseInt((new_date-sql_date)/(1000*60*60*24))>30){
+          console.log(parseInt((new_date-sql_date)/(1000*60*60*24)))
+          var jiaju_id=jiaju[i].jiaju_id;
+          var revise=createXhr();
+          revise.onreadystatechange=function(){
+          }
+          revise.open("get","http://127.0.0.1:3000/product/revise?jiaju_id="+jiaju_id+"&jiaju_newProduct=0");
+          revise.send(null);
+        }
+      }
       if(jiaju[i].jiaju_old==0){
         html+='<li>'
         html+='<div class="img"><img src="http://127.0.0.1:3000/images/dz.png" alt=""></div>'

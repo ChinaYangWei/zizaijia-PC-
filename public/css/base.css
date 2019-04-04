@@ -8,22 +8,6 @@ a{
 ul{
   list-style: none;
 }
-@media screen and (max-width:1720px){
-  .Nav>.container>.logo{
-      width:340px;
-  }
-}
-@media screen and (max-width:1500px){
-  .Nav>.notice>div>.noticeText-left{
-    width:600px !important;
-  }
-  .notice{
-    width:1905px;
-  }
-  .Nav>.container{
-      width:1905px;
-  }
-}
 /* 群组选择器，共用一种样式 */
 .footer-center ul>li>a:hover,.footer_desc>div:first-child>a:hover,.ndx_last>.last_ul>.tab-container>ul>li:hover>a>p,.footer_desc>div:first-child>ul>li>a:hover,.ndx_last>.last_ul>#tab>.tab_item:hover,.ndx_button:hover>a,.pro_two>.ndx_button:hover>a,.ndx_pro1:hover>a>p,.ndx_pro2:hover>a>p,.ndx_pro4:hover>a>p,.ndx_pro5:hover>a>p,.ndx_pro6:hover>a>p,.search>div>div:nth-child(2)>ul>li>a:hover,.textOne>div>ul:first-child>li:first-child>a,.textOne>div>ul:first-child>li>a:hover,.textOne>div>p>a:hover,.textOne>div>ul:nth-child(2)>li>div:hover p,.textOne>div>p>a:hover,.textTwo>div>p>a:hover,.textThree>div>p>a:hover,.textFour>div>ul:first-child>li:hover>a>p,.textFour>div>p>a:hover,.textFive>div>ul:first-child>li:hover>a>p,.textTwo>div>ul>li:hover>a>p,.textThree>div>ul>li:hover>a>p,.textTwo>div>ul:first-child>li:hover>a>p,.textFive>div>p>a:hover,.xieyi a{
   color:#7adfa9;

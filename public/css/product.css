@@ -6,22 +6,29 @@
   z-index: 3;
 }
 /* 商品页面的顶部图片 */
-.product_banner{
-  padding: 0 35px;
+.product_banner>a>img{
+  width:1345px;
+  margin:0 auto;
+}
+.product_nav{
   position: relative;
   top:64px;
 }
-.product_nav{
-  width:1900px;
-  position: relative;
-  top:64px;
+.product_container{
+  width:1190px;
+  margin:0 auto;
+}
+.product_nav::after,.product_container::after{
+  content:"";
+  display:block;
+  clear: both;
 }
 /* 商品导航栏的左边导航栏 */
 .product_nav_left{
   background-color: #fff;
   width:230px;
   float: left;
-  padding: 40px 25px 0 230px;
+  padding-right: 8px;
 }
 .screen{    
   font-size: 16px;
@@ -90,12 +97,11 @@
 /* 商品右边的展示导航 */
 .product_nav_right{
   float: left;
-  width:1150px;
+  width:915px;
   background-color: #ececec;
-  padding: 33px 0 33px 70px;
+  padding: 25px 0 0px 35px;
 }
 .product_title{
-  width:1115px;
   height:60px;
 }
 .product_title>h4{

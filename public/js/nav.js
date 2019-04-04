@@ -10,31 +10,31 @@ xhr.onreadystatechange=function(){
   if(xhr.readyState==4&&xhr.status==200){
     var res=xhr.responseText;
     document.querySelector(".Nav").innerHTML=res;
-    var search=document.querySelector(".Nav>.search");
-    var button=document.querySelector(".Nav>.container>.drop_down-right>ul>li:first-child>a");
-    var focus=document.querySelector(".Nav>.search>.searchText>.input>input");
+    var search=document.querySelector(".search");
+    var button=document.querySelector(".drop_down-right>ul>li:first-child>a");
+    var focus=document.querySelector(".search>.searchText>.input>input");
     button.onclick=function(){
       search.style="display:block;top:-30px";
       focus.focus();
       document.querySelector("#fade").style.display="block";
     focus.onblur=function(){
-      document.querySelector(".Nav>.search>.searchText>div:nth-child(2)").style.display="none";
+      document.querySelector(".search>.searchText>div:nth-child(2)").style.display="none";
       search.style.height="300px";
       }
     focus.onfocus=function(){
-      document.querySelector(".Nav>.search>.searchText>div:nth-child(2)").style.display="block";
+      document.querySelector(".search>.searchText>div:nth-child(2)").style.display="block";
       search.style.height="390px";
     }
     }
     // 搜索框
-    var img=document.querySelector(".Nav>.search>div>img:first-child");
+    var img=document.querySelector(".search>div>img:first-child");
     img.onclick=function(){
       search.style="display:none";
       document.querySelector("#fade").style.display="none";
     }  
       // 获取导航栏的高度，并且动态获取bg的高度，更改导航栏的margintop
       var top = document.documentElement.scrollTop || document.body.scrollTop;
-      var divHeight=document.querySelector(".Nav>.notice").offsetHeight;
+      var divHeight=document.querySelector(".notice").offsetHeight;
       var container=document.querySelector(".container");
       if(top>=divHeight){
         container.style.marginTop=-top+"px";
@@ -49,7 +49,7 @@ xhr.onreadystatechange=function(){
       } 
       // 底部的左右选拉的时候改变fixed的元素left使得向右或者向左移动
       var x=document.documentElement.scrollLeft;
-      var nav=document.querySelector(".Nav>.container")
+      var nav=document.querySelector(".container")
       if(x>=1){
         nav.style.left=-x+"px";
       }else{
@@ -101,4 +101,3 @@ xhr.onreadystatechange=function(){
   xhr.open("get","nav.html",true);
   xhr.send(null);
 })();
-// 页面刷新，导航栏有问题

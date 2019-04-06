@@ -1,3 +1,4 @@
+// 创建一个为id查找元素的函数
 function $(id){
 var ele=document.getElementById(id);
 return ele;

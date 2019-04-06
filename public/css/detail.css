@@ -7,9 +7,10 @@
 }
 /* 商品 */
 .detail{
-  width:1900px;
   position: relative;
   background: #ececec;
+  width:1345px;
+  margin:0 auto;
 }
 /* 商品头部 */
 .detail>.goods{
@@ -71,11 +72,11 @@
   position: relative;
 }
 #picbox{
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   overflow: hidden;
   position: absolute;
-  right: 150px;
+  right: 58px;
   background-color: #ececec;
   display: none;
   z-index: 1;

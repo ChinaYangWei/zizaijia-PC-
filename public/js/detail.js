@@ -1,4 +1,5 @@
 (function(){
+  // 商品的循环
 var search=location.search.split("=")[1];
 var xhr=createXhr();
 xhr.onreadystatechange=function(){
@@ -8,45 +9,45 @@ xhr.onreadystatechange=function(){
      document.querySelector(".goods>.product>.product-left h3>a").innerHTML=res[0].title_ify;
      document.querySelector(".goods>.product>.product-left>h3").innerHTML=res[0].title_ify+" "+res[0].jiaju_title;
      var a="";
-     a+='<div class="font">'
-     a+='<h3 class="detail-tit">'+res[0].jiaju_ln+'</h3>'
-     a+='<div class="detail-raty">'
-     a+='<div class="xingxing">'
-     a+='<div class="start-before">★★★★★</div>'
-     a+='<div class="end-before">★★★★★</div>'
-     a+='</div>'
-     a+='<div id="comment">评价:'
-     a+='<span>0</span>'
-     a+='</div>'
-     a+='<div class="detail-fy">'
-     a+='<a href="" class="fenxiang">'
-     a+='</a>'
-     a+='<a href="" class="shoucang">'
-     a+='</a>'
-     a+='</div>'
-     a+='<div class="product-color-item">'
+      a+='<div class="font">'
+      a+='<h3 class="detail-tit">'+res[0].jiaju_ln+'</h3>'
+      a+='<div class="detail-raty">'
+      a+='<div class="xingxing">'
+      a+='<div class="start-before">★★★★★</div>'
+      a+='<div class="end-before">★★★★★</div>'
+      a+='</div>'
+      a+='<div id="comment">评价:'
+      a+='<span>0</span>'
+      a+='</div>'
+      a+='<div class="detail-fy">'
+      a+='<a href="" class="fenxiang">'
+      a+='</a>'
+      a+='<a href="" class="shoucang">'
+      a+='</a>'
+      a+='</div>'
+      a+='<div class="product-color-item">'
      if(res[0].jiaju_color.indexOf("#")!=-1){
       a+='<div class="item-color" style=background:'+res[0].jiaju_color+'>'
       a+='</div>'
      }else{
       a+='<span class="color-ln">'+res[0].jiaju_color+'</span>'
      }
-     a+='<span class="color-title">颜色:</span>'
-     a+='</div>'
-     a+='<div class="product-color-spec">'
-     a+='</div>'
-     a+='<div class="product-count">'
-     a+='<span class="productNumber">数量:</span>'
-     a+='<button id="product-minus">-</button>'
-     a+='<span id="product-number">1</span>'
-     a+='<button id="product-add">+</button>'
-     a+='</div>'
-     a+='<div class="price-info">'
+      a+='<span class="color-title">颜色:</span>'
+      a+='</div>'
+      a+='<div class="product-color-spec">'
+      a+='</div>'
+      a+='<div class="product-count">'
+      a+='<span class="productNumber">数量:</span>'
+      a+='<button id="product-minus">-</button>'
+      a+='<span id="product-number">1</span>'
+      a+='<button id="product-add">+</button>'
+      a+='</div>'
+      a+='<div class="price-info">'
      if(res[0].jiaju_old.toFixed(2)>0.01){
-      a+='<h3>￥'+res[0].jiaju_old.toFixed(2)+'</h3>'
-      a+='<h4>￥'+res[0].jiaju_price.toFixed(2)+'</h4>'
+      a+='<span style="float:left">￥</span><h3>'+res[0].jiaju_old.toFixed(2)+'</h3>'
+      a+='<span style="float:left">￥</span><h4>'+res[0].jiaju_price.toFixed(2)+'</h4>'
     }else if(res[0].jiaju_old.toFixed(2)==0){
-      a+='<h3>￥'+res[0].jiaju_price.toFixed(2)+'</h3>'
+      a+='<span style="float:left">￥</span><h3>'+res[0].jiaju_price.toFixed(2)+'</h3>'
     }
      a+='<span class="pit">优惠提醒'
      a+='<div class="product-phone">'
@@ -79,17 +80,17 @@ xhr.onreadystatechange=function(){
       var number=$("product-number");
       var minus=$("product-minus");
       add.onclick=function(){
-        if(number.innerHTML>=res[0].jiaju_stock){
+        if(parseInt(number.innerHTML)>res[0].jiaju_stock){
           alert("对不起，库存不足")
           return;
         }
         number.innerHTML++;
         var old=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-number").innerHTML;
         if(res[0].jiaju_old.toFixed(2)>=0.01){
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML="￥"+(old*res[0].jiaju_old).toFixed(2);
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h4").innerHTML="￥"+(old*res[0].jiaju_price).toFixed(2);
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML=(old*res[0].jiaju_old).toFixed(2);
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h4").innerHTML=(old*res[0].jiaju_price).toFixed(2);
         }else if(res[0].jiaju_old.toFixed(2)==0){
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML="￥"+(old*res[0].jiaju_price).toFixed(2);
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML=(old*res[0].jiaju_price).toFixed(2);
         }
       }
       var input=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>input");
@@ -98,8 +99,8 @@ xhr.onreadystatechange=function(){
           document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>p").style.display="block";
           document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>input").style="border-bottom:1px solid red";
         }else{
-        document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>p").style.display="none";
-        document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>input").style="border-bottom:1px solid #A9A9A9";
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>p").style.display="none";
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>input").style="border-bottom:1px solid #A9A9A9";
         }
       }
       minus.onclick=function(){
@@ -108,38 +109,107 @@ xhr.onreadystatechange=function(){
         }
         number.innerHTML--;
         var price=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-number").innerHTML;
-        if(res[0].jiaju_old.toFixed(2)>=0.01){
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML="￥"+(price*res[0].jiaju_old).toFixed(2);
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h4").innerHTML="￥"+(price*res[0].jiaju_price).toFixed(2);
+        if(res[0].jiaju_old.toFixed(2)>0.01){
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML=(price*res[0].jiaju_old).toFixed(2);
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h4").innerHTML=(price*res[0].jiaju_price).toFixed(2);
         }else if(res[0].jiaju_old.toFixed(2)==0){
-          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML="￥"+(price*res[0].jiaju_price).toFixed(2);
+          document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML=(price*res[0].jiaju_price).toFixed(2);
         }
       }
-     document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.xingxing>.end-before").style.width=res[0].jiaju_score.toFixed(2)+"%";
+      document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.xingxing>.end-before").style.width=res[0].jiaju_score.toFixed(2)+"%";
 
-
-     var addCart=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.add_button");
-     var number=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-number");
-     var cart="";
-     addCart.onclick=function(){
-      document.querySelector(".drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none";
-      document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").style.display="block";
+      var addCart=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.add_button");
+      var number=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-number");
+      var cart="";
+      // 未登录加入购物车
+      addCart.onclick=function(){
+        if(!(document.cookie || navigator.cookieEnabled)){
+          alert("您的电脑可能未开启保存cookie功能或者不支持cookie")
+        }else{
+          var price=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML
+          var number=$("product-number").innerHTML;
+          var storage={productId:search,price:parseFloat(price).toFixed(2),productNb:number}
+          storage=JSON.stringify(storage);
+          var sl=window.localStorage.length;
+          var product=new Array();
+          if(sl>=1){
+            for(var i=0;i<=sl;i++){
+              if(i==sl){
+                window.localStorage.setItem("product"+(i+1),storage);
+                addCart();
+                return;
+              }
+            }
+          }else{
+            window.localStorage.setItem("product1",storage);
+            addCart();
+          }
+          function addCart(){
+            for(var i=0;i<=product.length;i++){
+              var getKey=localStorage.key(i); 
+              var getVal=localStorage.getItem(getKey);
+              if(getVal!=null){
+                if(sl==0){
+                  product=[];
+                }
+                for(var i=0;i<=sl;i++){
+                  if(product[i]!=undefined&&product[i].productId==search){
+                    product[i].price=(parseFloat(product[i].price)+parseFloat(price)).toFixed(2);
+                    product[i].productNb=parseInt(product[i].productNb)+parseInt(number);
+                    console.log(product[i])
+                  }else{
+                    var storage={productId:search,price:parseFloat(price).toFixed(2),productNb:number}
+                    console.log(product[i])
+                  }
+                  product[i]=JSON.parse(getVal);
+                }
+              }
+            }
+          }
+        //   var obj={productId:search,price:price,productNb:number};
+        //   var ver=window.localStorage;
+        //   for(var i=0;i<=ver.length;i++){
+        //     var productId=JSON.parse(window.localStorage.getItem(ver.key(i)));
+        //     if(window.localStorage.length==0||productId.productId!=search){
+        //       if(window.localStorage.length>=1){
+        //         for(var i=0;i<=window.localStorage.length;i++){
+        //           if(i==window.localStorage.length){
+        //           obj=JSON.stringify(obj);
+        //           window.localStorage.setItem("product"+(i+1),obj);
+        //           return;
+        //           }
+        //         }
+        //       }
+        //     obj=JSON.stringify(obj);
+        //     window.localStorage.setItem("product1",obj);
+        //     }else if(productId.productId==search){
+        //       console.log(productId.productId)
+        //       var Msg=JSON.parse(window.localStorage.getItem(ver.key(i)));
+        //       Msg.productNb=parseInt(Msg.productNb)+parseInt(number);
+        //       Msg.price=(parseFloat(Msg.price)+parseFloat(price)).toFixed(2);
+        //       Msg=JSON.stringify(Msg);
+        //       window.localStorage.setItem(ver.key(i),Msg);
+        //     }
+        //   }
+        }
+          document.querySelector(".drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none";
+          document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").style.display="block";
       if(document.cookie.indexOf(search)!=-1){
         document.querySelector(".drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div>p>.number").innerHTML;
       }else{
-      document.cookie=res[0].jiaju_id;
-      cart+='<div id="shopping">'
-      cart+='<div>'
-      cart+=  '<img src="'+res[0].jiaju_img+'" align="left">'
-      cart+=  '<p>'+res[0].jiaju_ln+'</p>'
+        document.cookie=res[0].jiaju_id;
+        cart+='<div id="shopping">'
+        cart+='<div>'
+        cart+=  '<img src="'+res[0].jiaju_img+'" align="left">'
+        cart+=  '<p>'+res[0].jiaju_ln+'</p>'
       if(res[0].jiaju_old.toFixed(2)>=0.01){
         cart+=  '<p>价格:￥'+res[0].jiaju_old.toFixed(2)+'</p>'
       }else if(res[0].jiaju_old.toFixed(2)==0){
         cart+=  '<p>价格:￥'+res[0].jiaju_price.toFixed(2)+'</p>'
       }
-      cart+=  '<p>数量:<span class="number">'+number.innerHTML+'</span></p>'
-      cart+=  '</div>'
-      cart+='</div>'
+        cart+=  '<p>数量:<span class="number">'+number.innerHTML+'</span></p>'
+        cart+=  '</div>'
+        cart+='</div>'
       var cartNum=document.querySelector(".drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.cartNum");
       var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>#cart>div[id=shopping]")
       if(res[0].jiaju_old.toFixed(2)>=0.01){
@@ -151,9 +221,9 @@ xhr.onreadystatechange=function(){
       if(shopp.length>3){
         $("cart").style="height:280px;overflow-x:hidden";
       }
-      document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>#cart").innerHTML+=cart;
-      cart="";
-      document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").innerHTML=shopp.length+1+"件商品"
+        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>#cart").innerHTML+=cart;
+        cart="";
+        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").innerHTML=shopp.length+1+"件商品"
       }
     }
   }
@@ -161,6 +231,7 @@ xhr.onreadystatechange=function(){
 xhr.open("get","http://127.0.0.1:3000/detail/shopping?jiaju_id="+search,true);
 xhr.send(null);
 
+// 商品详情的图片加载
  var detail=createXhr();
  detail.onreadystatechange=function(){
    if(detail.readyState==4&&detail.status==200){
@@ -181,13 +252,13 @@ xhr.send(null);
        html+='<img src="'+response[i].img_sm+'"></a>'
        img+='<img src="'+response[i].img_big+'" id="img'+i+'" style="display:'+(i==0?"block":"none")+'">'
      }
-    document.querySelector("#addpic>.focus>.data-img").innerHTML+=img;
-    document.querySelector(".footer_img>.shop_img").innerHTML+=html;
+       document.querySelector("#addpic>.focus>.data-img").innerHTML+=img;
+       document.querySelector(".footer_img>.shop_img").innerHTML+=html;
     var as=document.querySelectorAll("[data-toggle=hover]");
     for(var a of as){
       a.onmouseover=function(){
         for(var a of as){
-        a.className=a.className.replace("active","");
+          a.className=a.className.replace("active","");
         }
         var a=this;
         if(a.className.indexOf("active")==-1){
@@ -201,8 +272,8 @@ xhr.send(null);
             item.style.display="none";
           }
         }
-        img.style.display="block";
-        document.querySelector("#picbox>img").src=img.src;
+          img.style.display="block";
+          document.querySelector("#picbox>img").src=img.src;
       }
     }
   }
@@ -211,6 +282,7 @@ xhr.send(null);
  detail.send(null);
 })()
 
+// 放大镜
 var small=document.getElementById('addpic');
 var inner=document.getElementById('tool');
 var big=document.getElementById('picbox');

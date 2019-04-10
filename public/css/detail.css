@@ -257,6 +257,11 @@
   line-height: 30px;
   float: left;
 }
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec::after{
+  content:"";
+  display:block;
+  clear: both;
+}
 .product>.product-right>.right-container>.font>.detail-raty>.product-color-item>.color-title{
   margin-right: 20px;
   line-height: 30px;
@@ -354,6 +359,7 @@
 }
 .product>.product-right>.right-container>.font>.detail-raty>.price-info>h3{
   float: left;
+  margin-right:10px;
 }
 .product>.product-right>.right-container>.font>.detail-raty>.price-info>h4{
   float: left;

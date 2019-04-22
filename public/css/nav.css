@@ -20,7 +20,6 @@
 .container{
     background:#fff;
     z-index: 3;
-    position: fixed;
     width:1350px;
     margin:0 auto;
   }

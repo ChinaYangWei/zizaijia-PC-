@@ -1,10 +1,3 @@
-/* 因为reg页面的顶部与index的页面顶部不一样，所以要改变index的导航栏 */
-.container{
-  position: fixed;
-  width:100%;
-  background:#fff;
-  z-index: 3;
-}
 /* 商品页面的顶部图片 */
 .product_banner>a>img{
   width:1345px;

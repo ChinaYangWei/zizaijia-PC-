@@ -147,19 +147,19 @@ xhr.onreadystatechange=function(){
         // 循环数组
         if(arr.length>=1){
           for(var i=0;i<arr.length;i++){
-              if(arr[i].productId==search){
-                arr[i].new_price=(parseFloat(arr[i].new_price)+parseFloat(new_price)).toFixed(2);
-                if(old_price!=null){
-                  if(arr[i].old_price==undefined){
-                    arr[i].old_price=old_price.innerHTML
-                  }else{
-                    arr[i].old_price=(parseFloat(arr[i].old_price)+parseFloat(old_price.innerHTML)).toFixed(2);
-                  }
+            if(arr[i].productId==search){
+              arr[i].new_price=(parseFloat(arr[i].new_price)+parseFloat(new_price)).toFixed(2);
+              if(old_price!=null){
+                if(arr[i].old_price==undefined){
+                  arr[i].old_price=old_price.innerHTML
+                }else{
+                  arr[i].old_price=(parseFloat(arr[i].old_price)+parseFloat(old_price.innerHTML)).toFixed(2);
                 }
-                arr[i].productNb=parseInt(arr[i].productNb)+parseInt(number);
-                window.localStorage.setItem("product"+i,JSON.stringify(arr[i]));
-                result=true;
               }
+              arr[i].productNb=parseInt(arr[i].productNb)+parseInt(number);
+              window.localStorage.setItem("product"+i,JSON.stringify(arr[i]));
+              result=true;
+            }
           }
           if(!result){
             var ify={productId:parseInt(search),productLn:productLn,imgUrl:imgUrl.src,new_price:parseFloat(new_price).toFixed(2),productNb:parseInt(number)}
@@ -296,33 +296,36 @@ small.onmouseover=function(){
   big.style.display='block';
   inner.style.display='block';
 };
-//当鼠标在small移动的时候：1）鼠标在inner的中间 2）inner跟随鼠标移动
-small.onmousemove=function(e){
-  e=e||window.event;
-  var left=e.clientX-this.offsetLeft-inner.offsetWidth/2;
-  var top=e.clientY-this.offsetTop-inner.offsetHeight/2;
-  if(left<=0){
-    left=0;
-  }else if(left>=this.offsetWidth-inner.offsetWidth){
-    left=this.offsetWidth-inner.offsetWidth
-  }
-  if(top<=0){
-    top=0;
-  }else if(top>=this.offsetHeight-inner.offsetHeight){
-    top=this.offsetHeight-inner.offsetHeight
-  }
-  inner.style.left= left+'px';
-  inner.style.top= top+'px';
-  //当inner移动的时候，大图跟着一起移动，并且，大图和inner移动的方向相反；
-  //或者理解为：左边阴影在图片上从左到右移动的时候，右边大框也在大图片上从左到右移动（尽管视觉上是相反的）。
-  img.style.left=left/(small.offsetWidth-inner.offsetWidth)*(big.offsetWidth-img.offsetWidth)+'px';
-  img.style.top=top/(small.offsetHeight-inner.offsetHeight)*(big.offsetHeight-img.offsetHeight)+'px';
-};
-//当鼠标移出的时候，inner和big隐藏；
+//当鼠标移出small的时候，inner和big隐藏；
 small.onmouseout=function(){
   big.style.display='none';
   inner.style.display="none";
 }
+//当鼠标在small移动的时候：1）鼠标在inner的中间 2）inner跟随鼠标移动
+small.onmousemove=function(e){
+  e=e||window.event;
+  var left=e.clientX-small.offsetLeft-inner.offsetWidth/2;
+  var top=e.clientY-small.offsetTop-inner.offsetHeight/2;
+  if(left<=0){
+    left=0;
+  }else if(left>=small.offsetWidth-inner.offsetWidth){
+    left=small.offsetWidth-inner.offsetWidth
+  }
+  if(top<=0){
+    top=0;
+  }else if(top>=small.offsetHeight-inner.offsetHeight){
+    top=small.offsetHeight-inner.offsetHeight
+  }
+  inner.style.left= left+'px';
+  inner.style.top= top+'px';
+  //当inner移动的时候，大图跟着一起移动，并且，大图和inner移动的方向相反
+  //同理:左边阴影在图片上从左到右移动的时候，右边大框也在大图片上从左到右移动
+  img.style.left=left/(small.offsetWidth-inner.offsetWidth)*(big.offsetWidth-img.offsetWidth)+'px';
+  img.style.top=top/(small.offsetHeight-inner.offsetHeight)*(big.offsetHeight-img.offsetHeight)+'px';
+};
+// 问题:放大镜进行移动查看的时候鼠标轮动会产生bug
+
+
 // 商品的规格模板
 // a+='<span class="spec-tlt">规格:</span>'
 // a+='<div class="spec">'

@@ -33,20 +33,20 @@ xhr.onreadystatechange=function(){
       document.querySelector("#fade").style.display="none";
     }  
       // 获取导航栏的高度，并且动态获取bg的高度，更改导航栏的margintop
-      var top = document.documentElement.scrollTop || document.body.scrollTop;
-      var divHeight=document.querySelector(".notice").offsetHeight;
       var container=document.querySelector(".container");
-      if(top>=divHeight){
-        container.style.marginTop=-top+"px";
+      var ntHeight=document.querySelector(".notice").offsetHeight;
+      window.onscroll=function(){
+        var top=document.documentElement.scrollTop;
+        if(top>=ntHeight){
+          container.style.position="fixed";
+          var notice=document.querySelector(".notice");
+          notice.style.display="none";
+        }else{
+          container.style.position="staic";
+          var notice=document.querySelector(".notice");
+          notice.style.display="block";
+        }
       }
-      // 监听下拉框
-    window.onscroll=function(){
-      var top1= document.documentElement.scrollTop || document.body.scrollTop;
-      if(top1<=divHeight){
-        container.style.marginTop=-top1+"px";
-      }else{
-        container.style.marginTop=-divHeight+"px";
-      } 
       // 底部的左右选拉的时候改变fixed的元素left使得向右或者向左移动
       var x=document.documentElement.scrollLeft;
       var nav=document.querySelector(".container")
@@ -55,7 +55,6 @@ xhr.onreadystatechange=function(){
       }else{
         nav.style.left=x+"px";
       }
-    }
   var notice=createXhr();
   notice.onreadystatechange=function(){
     if(notice.readyState==4&&notice.status==200){

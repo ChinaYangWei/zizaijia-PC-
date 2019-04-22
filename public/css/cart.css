@@ -155,10 +155,11 @@
 }
 .product-box>table td .new_price{
   display: inline-block;
-    word-wrap: break-word;
-    font-size: 14px;
-    max-width: 80px;
-    color: #505050;
+  word-wrap: break-word;
+  font-size: 14px;
+  max-width: 80px;
+  color: #505050;
+  margin-right:10px;
 }
 .product-box>table td .old_price{
   display: inline-block;
@@ -186,12 +187,13 @@
   cursor: pointer;
 }
 .cart-order{
-  float: right;
   width:278px;
   background:#fff;
   padding:5px;
   margin:20px 0px 0px 0px;
   border-radius: 20px;
+  position: absolute;
+  left:70%;
 }
 .order-div{
   padding:30px;

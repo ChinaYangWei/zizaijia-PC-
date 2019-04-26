@@ -158,7 +158,7 @@ var check=document.querySelector(".reg_top>#reg>.protocol>input:first-child");
         var res=JSON.parse(result);
         if(res.code==1){
           alert("注册成功");
-          location.href="./reg.html";
+          location.href="http://127.0.0.1:3000/reg.html";
         }
       }
     }

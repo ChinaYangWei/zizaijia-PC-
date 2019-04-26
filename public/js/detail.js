@@ -183,22 +183,20 @@ xhr.onreadystatechange=function(){
         var old_price=0;
         var sum=0;
         var nb=0;
-        var cartNum=document.querySelector(".drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.cartNum");
+        var cartNum=document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum");
         cartNum.innerHTML="";
-        $("cart").innerHTML="";
+        $("shopping").innerHTML="";
         for(var i=0;i<arr.length;i++){
           nb+=arr[i].productNb;
-          cart+='<div id="shopping">'
           cart+='<div>'
-          cart+=  '<img src="'+arr[i].imgUrl+'" align="left">'
-          cart+=  '<p>'+arr[i].productLn+'</p>'
+          cart+='<img src="'+arr[i].imgUrl+'" align="left">'
+          cart+='<p>'+arr[i].productLn+'</p>'
           if(arr[i].old_price!=undefined){
-            cart+=  "<p>价格:￥"+arr[i].new_price+"<span style='text-decoration:line-through;color:#555;margin-left:10px;'>￥"+arr[i].old_price+"</span></p>"
+            cart+='<p>价格:￥'+arr[i].new_price+'<span style="text-decoration:line-through;color:#555;margin-left:10px;">￥'+arr[i].old_price+'</span></p>'
           }else{
-            cart+=  '<p>价格:￥'+arr[i].new_price+'</p>'
+            cart+='<p>价格:￥'+arr[i].new_price+'</p>'
           }
-            cart+=  '<p>数量:<span class="number">'+arr[i].productNb+'</span></p>'
-            cart+=  '</div>'
+            cart+='<p>数量:<span class="number">'+arr[i].productNb+'</span></p>'
             cart+='</div>'
           //打折商品 
           if(arr[i].new_price!=undefined&&arr[i].old_price!=undefined){
@@ -218,9 +216,9 @@ xhr.onreadystatechange=function(){
           }
           cartNum.innerHTML+="<span>总价:¥"+sum+"</span>"
           cartNum.innerHTML+='<div id="onCart">去结算</div></div>'
-        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>#cart").innerHTML+=cart;
+        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>li>#shopping").innerHTML+=cart;
         cart="";
-        var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>#cart>div[id=shopping]");
+        var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>li>div[id=shopping]");
         document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").innerHTML=shopp.length+"件商品"
         if(shopp.length>3){
           $("cart").style='height:280px;overflow-x:hidden'

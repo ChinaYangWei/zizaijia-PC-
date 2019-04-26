@@ -67,6 +67,7 @@ xhr.onreadystatechange=function(){
         html+="</li>"
       }
       $("noticeText-left").innerHTML=html;
+      html="";
     }
   }
     notice.open("get","http://127.0.0.1:3000/notice/notice",true);

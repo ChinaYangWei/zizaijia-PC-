@@ -20,10 +20,10 @@
 .container{
     background:#fff;
     z-index: 3;
-    width:1350px;
+    width:1346px;
     margin:0 auto;
   }
-.container::after,.center::after,.video>.video-container,.container>.center,.drop_down-center>ul{
+.container::after,.center::after,.video>.video-container,.container>.center,.drop_down-left>ul{
     content: "";
     display: table;
     clear: both;
@@ -33,16 +33,16 @@
     margin:0 auto;
 }
 /* 下拉菜单 */
-.drop_down-center,.textFour>div>ul>li,.textFive>div>ul>li{
+.drop_down-left,.textFour>div>ul>li,.textFive>div>ul>li{
     float:left;
 }
 .center>.drop_down-right{
     float: right;
 }
-.drop_down-center>ul>li{
+.drop_down-left>ul>li{
     float: left;
     list-style: none;
-    line-height: 64px;
+    line-height: 62px;
     width: 105px;
     text-align: center;
     cursor: pointer;
@@ -77,7 +77,7 @@
     position: relative;
 }
 /* 群组选择器，共用一种样式 */
-.drop_down-center .textOne,.textTwo,.textThree,.textFour,.textFive{
+.drop_down-left .textOne,.textTwo,.textThree,.textFour,.textFive{
     width:100%;
     position:absolute;
     display:none;
@@ -95,7 +95,7 @@
     display:block;
     z-index:2;
 }
-.drop_down-center>ul>li>a,.textFour>div>ul:first-child>li>a,.textFive>div>ul:first-child>li>a{
+.drop_down-left>ul>li>a,.textFour>div>ul:first-child>li>a,.textFive>div>ul:first-child>li>a{
     color:#505050;
 }
 /* 第一个下拉菜单 */
@@ -233,7 +233,7 @@
     z-index:1;
     text-align: center;
     border-radius: 10px;
-    margin-left:-215px;
+    margin-left:-248px;
     opacity: 0.9;
 }
 .center>.drop_down-right>ul>li:nth-child(3) ul{
@@ -262,13 +262,13 @@
     overflow: hidden;
     line-height: 15px;
 }
-.center>.drop_down-right>ul>li:nth-child(3)>ul>div:first-child{
+.center>.drop_down-right>ul>li:nth-child(3)>ul>div:nth-child(2)>div{
     border-bottom:1px solid #ddd;
     margin-bottom: 5px;
     height:50px;
     line-height: 45px;
 }
-.center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number{
+.center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number>span{
     display: none;
     width: 100%;
     text-align: center;
@@ -278,7 +278,7 @@
     position: relative;
     top: -46px;
 }
-.center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div,.center>.drop_down-right>ul>li:nth-child(3)>ul>.cartNum{
+.center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div,.center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum{
     margin-left:10px;
     margin-right:10px;
     text-align: left;
@@ -288,7 +288,7 @@
 .center>.drop_down-right>ul>li:nth-child(3)>ul>.cartNum>span{
     font-size: 20px;
 }
-.center>.drop_down-right>ul>li:nth-child(3)>ul>.cartNum>div{
+.center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum>div{
     float: right;
     background: #7adfa9;
     border-radius: 40px;
@@ -298,7 +298,7 @@
     text-align: center;
     color:#fff;
 }
-.center>.drop_down-right>ul>li:nth-child(3)>ul>.cartNum>div:hover{
+.center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum>div:hover{
     background:#fff;
     color:rgb(94,223,154);
     border:1px solid #7adfa9;

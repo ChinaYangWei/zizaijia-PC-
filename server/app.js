@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors({
   orgin:"http://127.0.0.1:5500"
 }))
-app.use(express.static("../public"));
+app.use(express.static("../stage"));
 app.use(express.static("./public"));
 app.use("/reg",reg);
 app.use("/login",login);

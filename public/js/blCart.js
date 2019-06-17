@@ -2,7 +2,7 @@
   var arr=[];
   var cart="";
   var cartNum="";
-  if(window.localStorage.length>=1){
+  if(localStorage.length>=1){
     for(var i=0;i<localStorage.length;i++){
       var getKey=localStorage.key(i);
       var getVal=localStorage.getItem(getKey)
@@ -12,20 +12,31 @@
     }
   }
   setTimeout(function(){
+    if(localStorage.length==0){
+      document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").style.display="none";
+      document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="block"
+      document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>li").style.display="none"
+    }else{
+      document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number>span").style.display="block"
+      document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").style.display="block";
+      document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none"
+    }
+    // 删除指定的商品之后再增加删除的那个商品的时候问题
     var nb=0;
     var sum=0;
     var old_price=0;
     var new_price=0;
-    document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none"
-    document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number>span").style.display="block"
-    document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").style.display="block";
     for(var i=0;i<arr.length;i++){
       nb+=arr[i].productNb;
       sum+=arr[i].new_price;
       cart+='<div>'
       cart+='<img src="'+arr[i].imgUrl+'" align="left">'
       cart+='<p>'+arr[i].productLn+'</p>'
-      cart+='<p>价格:￥'+arr[i].new_price+'<span style="text-decoration:line-through;color:#555;margin-left:10px;">￥31996.00</span></p>'
+      cart+='<p>价格:￥'+arr[i].new_price
+      if(arr[i].old_price>0.01){
+        cart+='<span style="text-decoration:line-through;color:#555;margin-left:10px;">￥31996.00</span>'
+      }
+      cart+='</p>'
       cart+='<p>数量:<span class="number">'+arr[i].productNb+'</span></p>'
       cart+='</div>'
       //打折商品 
@@ -49,5 +60,9 @@
     cartNum+='<span>总价:¥'+sum+'</span>'
     cartNum+='<div id="goSt">去结算</div>'
     document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum").innerHTML=cartNum
+    var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>li>div[id=shopping]>div");
+    if(shopp.length>3){
+      $("shopping").style='height:170px;overflow-x:hidden'
+    }
   },500)
 })();

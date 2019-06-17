@@ -9,7 +9,7 @@
 .detail{
   position: relative;
   background: #ececec;
-  width:1345px;
+  min-width:1345px;
   margin:0 auto;
 }
 /* 商品头部 */

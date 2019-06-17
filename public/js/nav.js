@@ -46,14 +46,14 @@ xhr.onreadystatechange=function(){
           var notice=document.querySelector(".notice");
           notice.style.display="block";
         }
-      }
-      // 底部的左右选拉的时候改变fixed的元素left使得向右或者向左移动
-      var x=document.documentElement.scrollLeft;
-      var nav=document.querySelector(".container")
-      if(x>=1){
-        nav.style.left=-x+"px";
-      }else{
-        nav.style.left=x+"px";
+        // 底部的左右选拉的时候改变fixed的元素left使得向右或者向左移动
+        var x=document.documentElement.scrollLeft;
+        var nav=document.querySelector(".container")
+        if(x>=1){
+          nav.style.left=-x+"px";
+        }else{
+          nav.style.left=x+"px";
+        }
       }
   var notice=createXhr();
   notice.onreadystatechange=function(){

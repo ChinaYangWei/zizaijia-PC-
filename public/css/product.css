@@ -1,6 +1,9 @@
+.product_banner{
+  min-width: 1345px;
+}
 /* 商品页面的顶部图片 */
 .product_banner>a>img{
-  width:1345px;
+  width:100%;
   margin:0 auto;
 }
 .product_nav{

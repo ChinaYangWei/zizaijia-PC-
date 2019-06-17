@@ -4,7 +4,7 @@
     background:url("../images/nav_bg.jpg")
   }
 .Nav{
-    width: 1345px;
+    min-width: 1345px;
     margin: 0 auto;
     background:#fff;
     height:94px;
@@ -20,7 +20,7 @@
 .container{
     background:#fff;
     z-index: 3;
-    width:1346px;
+    min-width:1349px;
     margin:0 auto;
   }
 .container::after,.center::after,.video>.video-container,.container>.center,.drop_down-left>ul{
@@ -240,10 +240,6 @@
     display:none;
     position:absolute;
 }
-/* .drop_down-right>ul>li:nth-child(3){
-    width:45px;
-    text-align: center;
-} */
 .center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div>img{
     width:65px;
     height:55px;
@@ -251,8 +247,11 @@
 }
 .center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping,.center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart>.cart-text{
     width:320px;
-    border-bottom: 1px solid #ddd;
+    border:1px solid #ddd;
+    border-left: none;
+    border-right: none;
     margin-bottom: 5px;
+    padding: 8px 0;
     text-align: center;
 }
 .center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div>p{
@@ -276,14 +275,15 @@
     color: #BEBEBE;
     height: 20px;
     position: relative;
-    top: -46px;
+    top: 45px;
+    line-height:20px;
+    position: absolute;
 }
 .center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping>div,.center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum{
     margin-left:10px;
     margin-right:10px;
     text-align: left;
     line-height: 35px;
-    margin-bottom:15px;
 }
 .center>.drop_down-right>ul>li:nth-child(3)>ul>.cartNum>span{
     font-size: 20px;

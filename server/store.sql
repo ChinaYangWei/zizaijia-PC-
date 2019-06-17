@@ -1,7 +1,7 @@
 SET NAMES UTF8;
-DROP DATABASE IF EXISTS myProject;
-CREATE DATABASE myject CHARSET=UTF8;
-USE myject;
+DROP DATABASE IF EXISTS zizaijia;
+CREATE DATABASE zzPc CHARSET=UTF8;
+USE zzPc;
 
 #创建一个用户列表
 CREATE TABLE store_user(
@@ -12,7 +12,7 @@ CREATE TABLE store_user(
 
 #创建一个家具的列表
 CREATE TABLE product_jiaju(
-  jiaju_id INT  PRIMARY KEY AUTO_INCREMENT comment '家具的id',
+  jiaju_id INT PRIMARY KEY AUTO_INCREMENT comment '家具的id',
   classify VARCHAR(25) comment '家具中的房间分类',
   product_ify VARCHAR(50) comment '房间中的商品分类',
   title_ify VARCHAR(25) comment '商品的标题分类',
@@ -29,7 +29,7 @@ CREATE TABLE product_jiaju(
   jiaju_isOverflow CHAR(1) comment '是否为超值爆款',
   jiaju_newProduct CHAR(1) comment '是否为新品',
   jiaju_stock INT comment '商品的库存数量',
-  jiaju_newTime DATETIME NOT NULL DEFAULT NOW() comment '新品的状态修改判断',
+  jiaju_newTime DATETIME NOT NULL DEFAULT NOW() comment '商品上架时间',
   jiaju_caizhi VARCHAR(25) NOT NULL comment '商品的材质分类'
 );
 

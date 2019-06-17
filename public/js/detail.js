@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
   // 商品的循环
 var search=location.search.split("=")[1];
 var xhr=createXhr();
@@ -123,7 +123,7 @@ xhr.onreadystatechange=function(){
       // 未登录加入购物车
       addCart.onclick=function(){
       if(!(document.cookie || navigator.cookieEnabled)){
-        alert("您的电脑可能未开启保存cookie功能或者不支持cookie")
+        alert("您的电脑可能未开启本地存储")
       }else{
         var productLn=document.querySelector(".goods>.product>.product-left>h3").innerHTML;
         var new_price=document.querySelector(".product>.product-right>.right-container>.font>.detail-raty>.price-info>h3").innerHTML;
@@ -131,43 +131,47 @@ xhr.onreadystatechange=function(){
         var number=$("product-number").innerHTML;
         var imgUrl=document.querySelector(".footer_img>.shop_img>.shop_item:first-child>img");
         var arr=[];
-        var result=false;
-        document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>li>#shopping, .center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none";
+        var isTrue=false;
+        document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul:nth-child(2)>.noCart").style.display="none";
         document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number").style.display="block";
+        document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>.pr-number>span").style.display="block";
         document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").style.display="block";
+        document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>li").style.display="block"
         // 循环获取localstorage
-        for(var i=0;i<=localStorage.length;i++){
+        for(var i=0;i<localStorage.length;i++){
           var getKey=localStorage.key(i);
           var getVal=localStorage.getItem(getKey);
           getVal=JSON.parse(getVal)
           if(getVal!=null){
             arr[i]=getVal
           }
+        var string=parseInt(getKey.split("t")[1]);
         }
         // 循环数组
-        if(arr.length>=1){
+        if(arr.length>0){
           for(var i=0;i<arr.length;i++){
             if(arr[i].productId==search){
+              isTrue=true;
               arr[i].new_price=(parseFloat(arr[i].new_price)+parseFloat(new_price)).toFixed(2);
               if(old_price!=null){
                 if(arr[i].old_price==undefined){
-                  arr[i].old_price=old_price.innerHTML
+                  arr[i].old_price=(parseFloat(old_price.innerHTML)).toFixed(2)
                 }else{
                   arr[i].old_price=(parseFloat(arr[i].old_price)+parseFloat(old_price.innerHTML)).toFixed(2);
                 }
               }
               arr[i].productNb=parseInt(arr[i].productNb)+parseInt(number);
               window.localStorage.setItem("product"+i,JSON.stringify(arr[i]));
-              result=true;
             }
           }
-          if(!result){
+          if(!isTrue){
             var ify={productId:parseInt(search),productLn:productLn,imgUrl:imgUrl.src,new_price:parseFloat(new_price).toFixed(2),productNb:parseInt(number)}
             if(old_price!=null){
-              ify.old_price=old_price.innerHTML;
+              ify.old_price=(parseFloat(old_price.innerHTML)).toFixed(2);
             }
             arr.push(ify)
-            window.localStorage.setItem("product"+i,JSON.stringify(arr[i]));
+            string++;
+            window.localStorage.setItem("product"+string,JSON.stringify(ify));
           }
         }else{
           var str={productId:parseInt(search),productLn:productLn,imgUrl:imgUrl.src,new_price:parseFloat(new_price).toFixed(2),productNb:parseInt(number)}
@@ -176,18 +180,16 @@ xhr.onreadystatechange=function(){
           }
           if(arr[0]==null){
             arr[0]=str;
-            window.localStorage.setItem("product0",JSON.stringify(arr[0]));
+            window.localStorage.setItem("product0",JSON.stringify(str));
           }
         }
-        var new_price=0;
-        var old_price=0;
+        new_price=0,old_price=0,number=0;
         var sum=0;
-        var nb=0;
         var cartNum=document.querySelector(".center>.drop_down-right>ul>li:nth-child(3)>ul>li>.cartNum");
         cartNum.innerHTML="";
         $("shopping").innerHTML="";
         for(var i=0;i<arr.length;i++){
-          nb+=arr[i].productNb;
+          number+=arr[i].productNb;
           cart+='<div>'
           cart+='<img src="'+arr[i].imgUrl+'" align="left">'
           cart+='<p>'+arr[i].productLn+'</p>'
@@ -206,7 +208,7 @@ xhr.onreadystatechange=function(){
             old_price+=JSON.parse(arr[i].new_price);
           }
         }
-        document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").innerHTML=nb;
+        document.querySelector(".Nav>.container>.center>.drop_down-right>ul>li>.cart>.cartNumber").innerHTML=number;
           if(old_price>=1&&new_price>=1){
             sum=(parseFloat(new_price)+parseFloat(old_price)).toFixed(2);
           }else if(new_price>=1&&old_price<=0){
@@ -218,11 +220,8 @@ xhr.onreadystatechange=function(){
           cartNum.innerHTML+='<div id="onCart">去结算</div></div>'
         document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>li>#shopping").innerHTML+=cart;
         cart="";
-        var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>li>div[id=shopping]");
-        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number").innerHTML=shopp.length+"件商品"
-        if(shopp.length>3){
-          $("cart").style='height:280px;overflow-x:hidden'
-        }
+        var shopp=document.querySelectorAll(".drop_down-right>ul>li:nth-child(3) ul>li>div[id=shopping]>div");
+        document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number>span").innerHTML=shopp.length+"件商品"
       }
         $("onCart").onclick=function(){
           window.open("http://127.0.0.1:3000/cart.html");
@@ -321,7 +320,6 @@ small.onmousemove=function(e){
   img.style.left=left/(small.offsetWidth-inner.offsetWidth)*(big.offsetWidth-img.offsetWidth)+'px';
   img.style.top=top/(small.offsetHeight-inner.offsetHeight)*(big.offsetHeight-img.offsetHeight)+'px';
 };
-// 问题:放大镜进行移动查看的时候鼠标轮动会产生bug
 
 
 // 商品的规格模板

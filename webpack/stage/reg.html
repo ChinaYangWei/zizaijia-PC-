@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="这是一个原生前端技术官网">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>恣在家官网模仿-用户</title>
+ </head>
+ <body>
+
+	<div class="Nav"></div>
+
+ <div class="reg_top">
+	 <div class="checked">请阅读ZEST注册协议</div>
+	  <div id="reg">
+		  <h2 class="regText">注册</h2>
+		<div>
+			<div class="input_style">
+				<input type="text" id="reg_phone" placeholder="手机号码" class="input_text" maxlength="11"><br><p id="showPhone" class="inputText_color"></p>
+			</div>
+		</div>
+		  <div>
+				<div class="input_style">
+					<input type="password" id="reg_cpwd" placeholder="请输入密码" class="input_text" maxlength="20"><br><p id="showCpwd" class="inputText_color"></p>
+				</div>
+		  </div>
+		  <div class="input_style">
+				<input type="password" id="reg_upwd" placeholder="请确认密码" class="input_text" maxlength="20"><br><p id="showUpwd" class="inputText_color"></p>
+		  </div>
+		  <div class="input_img">
+			  <input type="text" placeholder="请输入图形验证码" id="reg_yzm" class="input_text" maxlength="4"><div class="Yzm_img"><img src="http://www.zeststore.com/?project=core_api&model=Captcha&action=apiGetCaptcha&0.5157356229496832" style="margin-left:-81px;"></div><br><span id="showYzm" class="inputText_color"></span>
+		  </div>
+		  <div class="input_style">
+			   <input type="text" placeholder="请输入验证码" id="reg_yzm2" class="input_text" maxlength="4"><div class="Yzm_button">发送</div><br><p id="showYzm2" class="inputText_color"></p>
+		  </div>
+		  <div class="protocol">
+			   <input type="checkbox" checked>已阅读协议<a href="http://www.zeststore.com/brand/detail-65.html">ZEST注册协议</a>
+		  </div>
+		  <div class="Submit" id="REG">注册</div>
+		  <div class="Reg">登录</div>
+		  <div class="border_reg"></div>
+		  <iframe class="base" src="http://127.0.0.1:3000/common/user_footer.html" frameborder="0"></iframe>
+	  </div>
+	</div>
+</div>
+	<div class="login_top">
+		 <div id="login">
+			<span><a id="zh" href="">账号密码登录</a></span>
+			<span><a id="dx" href="">短信快捷登录</a></span>
+
+		 <div id="login-zh">
+			<div class="input_stylePhone">
+			   <input type="text" name="user_phone" placeholder="手机号码" class="login_phone" id="login_phone" maxlength="11"><br><p id="zhPhone" class="inputText_color"></p>
+			</div>
+			<div class="input_stylePhone">
+			   <input type="password" name="upwd" placeholder="密码" class="upwd" id="login_upwd" maxlength="20"><br><p id="zhUpwd" class="inputText_color"></p>
+			</div>
+				 <div class="login_1" id="login_button">登录</div>
+				 <div class="passport_zh"><a href="http://www.zeststore.com/passport.html">忘记密码</a></div>
+				 <div class="Reg">注册</div>
+				 <div class="border_zh"></div>
+				 <iframe class="base" src="http://127.0.0.1:3000/common/user_footer.html" frameborder="0"scrolling="no"></iframe>
+		 </div>
+
+		 <div id="login-dx">
+			<div class="input_stylePhone">
+			   <input type="text" name="user_phone" placeholder="手机号码" class="login_phone" maxlength="11" id="loginMessage_phone"><br><p id="messagePhone" class="inputText_color"></p>
+			</div>
+			<div class="input_stylePhone">
+			   <input type="text" placeholder="短信验证码" class="upwd" id="loginMessage_yzm" maxlength="4"><p id="messageYzm" class="inputText_color"></p>
+			</div>
+			<a class="Dx_button" id="Message">获取验证码</a>
+			 <div class="xieyi">若您的账号尚未注册，登录时将自动注册且代表<br>您已同意<a href="http://www.zeststore.com/brand/detail-65.html">《ZEST注册协议》</a></div>
+				 <div class="login_1" type="submit">登录</div>
+				 <div class="passport_dx"><a href="http://www.zeststore.com/passport.html">忘记密码</a></div>
+				 <div class="Reg">注册</div>
+				 <div class="border_dx"></div>
+				 <iframe class="base" src="http://127.0.0.1:3000/common/user_footer.html" frameborder="0"scrolling="no"></iframe>
+		 </div>
+
+		</div>
+	</div>
+
+	<script src="./dist/user.js"></script>
+ </body>
+</html>

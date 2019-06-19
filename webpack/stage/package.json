@@ -1,0 +1,35 @@
+{
+  "name": "zizaijiawebpack",
+  "version": "1.0.0",
+  "description": "这是恣在家官网模仿的项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChinaYangWei/zizaijia-PC-.git"
+  },
+  "keywords": [
+    "zizaijia"
+  ],
+  "author": "yw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChinaYangWei/zizaijia-PC-/issues"
+  },
+  "homepage": "https://github.com/ChinaYangWei/zizaijia-PC-#readme",
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
+    "glob": "^7.1.4",
+    "html-loader": "^0.5.5",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

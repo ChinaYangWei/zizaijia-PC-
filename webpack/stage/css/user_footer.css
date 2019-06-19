@@ -1,0 +1,16 @@
+.user_footer{
+    line-height:38px;
+    display:flex;
+    justify-content:space-around;
+}
+.user_footer img{
+    vertical-align:middle;
+}
+.user_footer div{
+    float:right;
+    font-size:12px;
+}
+.user_footer div a{
+    color:rgb(80,80,80);
+    text-decoration: none;
+}

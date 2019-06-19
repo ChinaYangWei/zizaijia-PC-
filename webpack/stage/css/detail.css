@@ -1,0 +1,492 @@
+/* 因为reg页面的顶部与index的页面顶部不一样，所以要改变index的导航栏 */
+.container{
+  position: fixed;
+  width:100%;
+  background:#fff;
+  z-index: 3;
+}
+/* 商品 */
+.detail{
+  position: relative;
+  background: #ececec;
+  min-width:1345px;
+  margin:0 auto;
+}
+/* 商品头部 */
+.detail>.goods{
+  width:1200px;
+  margin: 0 auto;
+}
+.goods>.goods-nav{
+  line-height: 24px;
+  padding-top: 27px;
+}
+.goods>.goods-nav>a:hover{
+  color:#5fdd9a;
+}
+.goods>.goods-nav>a{
+  background-color: transparent;
+  text-decoration: none;
+  color: #58595b;
+  font-size: 12px;
+}
+/* 商品左部 */
+.goods>.product>.product-left h3>a{
+  color:#505050;
+  font-weight: 400;
+}
+.goods>.product>.product-left h3>a:hover{
+  color:#5fdd9a;
+  font-weight: 400;
+}
+.goods>.product>.product-left>.product_ln{
+  height:60px;
+}
+.goods>.product>.product-left>.product_ln>.ln_title{
+  font-size: 14px;
+  color: #505050;
+  border-bottom: 1px solid #7adfa9;
+  padding-bottom: 5px;
+  padding-top: 37px;
+  float: left;
+}
+.goods>.product>.product-left>h3{
+  margin-top: 14px;
+  color: #505050;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+  width: 800px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 商品的图片 */
+.product-img{
+  width: 900px;
+  height: 580px;
+}
+#addpic{
+  width: 840px;
+  height: 560px;
+  position: relative;
+}
+#picbox{
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  position: absolute;
+  right: 58px;
+  background-color: #ececec;
+  display: none;
+  z-index: 1;
+}
+#picbox>img{
+  position: absolute;
+  width:200%;
+  height:200%;
+  display:block;
+}
+#tool{
+  width: 200px;
+  height: 200px;
+  background-color: #7adfa9;
+  opacity: .6;
+  filter: alpha(opacity=60);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  cursor: move;
+  z-index: 2;
+}
+#addpic>.focus>.data-img{
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 506px;
+  text-align: center;
+  line-height: 560px;
+}
+#addpic>.focus:hover>#tool{
+  display:block;
+}
+#addpic>.focus>.data-img>img{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+/* 商品脚部图片 */
+.footer_img{
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+.footer_img>.shop_img>.shop_item{
+  display: inline-block;
+  width: 90px;
+  height: 60px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  margin-right: 30px;
+}
+.footer_img>.shop_img>.shop_item.active{
+  border:1px solid #5fdd9a;
+}
+.product_active{
+  border: 1px solid #7adfa9;
+}
+/* 商品右部 */
+.product>.product-right{
+  float:right;
+}
+.product>.product-right:after{
+  content:"";
+  display:block;
+  clear: both;
+}
+.product>.product-right>.right-container{
+  width:295px;
+  float: left;
+  color:#505050;
+}
+.product>.product-right>.right-container>.font>.detail-tit{
+  padding-top: 60px;
+    width: 275px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #505050;
+    font-weight: 400;
+}
+.product:after{
+  content:"";
+  display:block;
+  clear: both;
+}
+.product-left{
+  float: left
+}
+/* 商品的评分 */
+.product>.product-right>.right-container>.font>.detail-raty{
+  margin-top:16px;
+  line-height:14px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy{
+  float:right;
+}
+
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy>a{
+  margin-right: 22px;
+  float: left;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy>.fenxiang{
+  width:25px;
+  height:25px;
+  background:url("../images/icon2_18.png");
+}
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy>.fenxiang:hover{
+  background:url("../images/icon1_18.png");
+}
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy>.shoucang{
+  width:25px;
+  height:25px;
+  background:url("../images/icon3_18.png");
+}
+.product>.product-right>.right-container>.font>.detail-raty>.detail-fy>.shoucang:hover{
+  background:url("../images/icon4_18.png");
+}
+.product>.product-right>.right-container>.font>.detail-raty>.xingxing{
+  position: absolute;
+  height:18px;
+  margin-top: 6px;
+  font-size: 22px;
+  user-select: none;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.xingxing>.start-before{
+  color:#e2e2e2;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.xingxing>.end-before{
+  color:#5fdd9a;
+  position: absolute;
+  top:0px;
+  left:0px;
+  overflow: hidden;
+  width:100%;
+}
+#comment{
+  display: inline-block;
+  height: 12px;
+  line-height: 12px;
+  cursor: pointer;
+  position: relative;
+  top: 6px;
+  left:105px;
+  font-size: 12px;
+}
+#comment:hover{
+  color:#7adfa9;
+}
+/* 商品的详情 */
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-item{
+  position: relative;
+  top:25px;
+  color:#505050;
+  font-size: 12px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-item>.item-color{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-item>div:first-child{
+  border: 1px solid #5fdd9a;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec{
+  position: relative;
+  top:30px;
+  color:#505050;
+  font-size: 12px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec>.spec-tlt{
+  margin-right: 20px;
+  line-height: 30px;
+  float: left;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec::after{
+  content:"";
+  display:block;
+  clear: both;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-item>.color-title{
+  margin-right: 20px;
+  line-height: 30px;
+  float: left;
+}
+
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec>.spec>#gry{
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  height: 25px;
+  padding: 0 9px;
+  text-align: center;
+  line-height: 25px;
+  color: #505050;
+  margin: 0 6px 6px 0;
+  float: left;
+  border: 1px solid #bebebe;
+  display: block;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec>.spec>#gry:hover{
+  cursor: pointer;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec>.spec>#gry:first-child{
+  border:1px solid #5fdd9a;
+  color:#5fdd9a;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-spec>.spec>#gry:hover{
+  border:1px solid #5fdd9a;
+  color:#5fdd9a;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-color-item>.color-ln{
+  font-size: 14px;
+  line-height: 30px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count{
+  position: relative;
+  top:35px;
+  font-size: 12px;
+  clear: left;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count:after{
+  content: "";
+  display:block;
+  clear: both;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count>.productNumber{
+  margin-right: 20px;
+  line-height: 30px;
+  float: left;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-add{
+  box-sizing: border-box;
+  height: 30px;
+  background-color: transparent;
+  width: 30px;
+  border: 1px solid #cdcdcd;
+  outline: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  float: left;
+  cursor: pointer;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-number{
+  position: relative;
+  width: 44px;
+  border: 1px solid #cdcdcd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  height: 28px;
+  line-height: 27px;
+  float: left;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-count>#product-minus{
+  height: 30px;
+  background-color: transparent;
+  width: 30px;
+  border: 1px solid #cdcdcd;
+  outline: 0;
+  float: left;
+  cursor: pointer;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info{
+  position: relative;
+  top: 60px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info:after{
+  content:"";
+  display:block;
+  clear: both;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>h3{
+  float: left;
+  margin-right:10px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>h4{
+  float: left;
+  margin-left:10px;
+  color: rgb(169, 169, 169);
+  line-height: 15px;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit{
+  height: 18px;
+  font-size: 14px;
+  border-bottom: 1px solid #5fdd9a;
+  width:60px;
+  cursor: pointer;
+  position: relative;
+  left:40px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit:hover{
+  color:#5fdd9a;
+}
+/* 商品手机号通知优惠 */
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit:hover>.product-phone{
+  z-index:2;
+  display:block;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone{
+  display:none;
+  padding:10px;
+  width:295px;
+  position: absolute;
+  top:21px;
+  background:#fff;
+  border-radius: 4px;
+  font-size:14px;
+  box-sizing: border-box;
+  right:-20px;
+  cursor: default;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>input{
+  outline: none;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+  border-bottom:1px solid #A9A9A9;
+  margin-left:10px;
+  height:25px;
+  padding-left:40px;
+  color:#505050;
+  margin-top:20px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>p{
+  color:red;
+  display:none;
+  margin-left:10px;
+  margin-top:2px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>i{
+  position: absolute;
+  left: 0;
+  background-image: url(../images/activites_logo.png);
+  background-repeat: no-repeat;
+  background-position: 22px 47px;
+  width: 45px;
+  height: 80px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>.button-pit{
+  color:#fff;
+  cursor: pointer;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>span{
+  color:#505050;
+  line-height:35px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>.button-pit:hover{
+  color:#5fdd9a;
+  border:1px solid #5fdd9a;
+  background:#fff;
+  box-sizing: border-box;
+  user-select: none;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.price-info>.pit>.product-phone>div{
+  text-align: center;
+  background:#5fdd9a;
+  height:30px;
+  margin-top:15px;
+  line-height: 30px;
+  border-radius: 25px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-notice>p{
+  display: inline-block;
+  background-color: #ff999a;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 4px;
+  padding: 2px 8px;
+  margin-bottom: 2px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.product-notice{
+  position: relative;
+  top: 75px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>#adv_tag{
+  display: inline-block;
+  position: relative;
+  top:80px;
+  color: #ff999a;
+  font-size: 12px;
+  padding-bottom: 5px;
+  margin-top: 12px;
+  border-bottom: 1px solid #ff999a;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.add_button{
+  position: relative;
+  top:100px;
+  color:#fff;
+  cursor: pointer;
+  border-radius: 25px;
+  background:#5fdd9a;
+  height:40px;
+  text-align: center;
+  line-height: 40px;
+}
+.product>.product-right>.right-container>.font>.detail-raty>.add_button:hover{
+  color:#5fdd9a;
+  border:1px solid #5fdd9a;
+  background:#fff;
+  box-sizing: border-box;
+  user-select: none;
+}

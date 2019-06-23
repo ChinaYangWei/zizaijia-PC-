@@ -1,4 +1,4 @@
-(function (){
+﻿(function (){
 var span=document.querySelectorAll("#click");
 for(var spans of span){
   spans.onclick=function(){
@@ -41,7 +41,6 @@ xhr.onreadystatechange=function(){
         new_date=Date.parse(new_date)
         // 拿当前时间减去数据库存入时间，得到毫秒数，再获得差值的天数，判断是否大于30天
         if(parseInt((new_date-sql_date)/(1000*60*60*24))>30){
-          console.log(parseInt((new_date-sql_date)/(1000*60*60*24)))
           var jiaju_id=jiaju[i].jiaju_id;
           var revise=createXhr();
           revise.onreadystatechange=function(){

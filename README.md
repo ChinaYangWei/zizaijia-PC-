@@ -1,5 +1,6 @@
 # zizaijia
-一.恣在家(PC)项目
+一.恣在家(PC)项目</br>
+！！！分为webpack打包版,纯原生js版！！！
 1.模仿 http://www.zeststore.com 项目官网</br>
 2.纯js原生技术实现整个页面的交互与数据展示</br>
 3.请浏览和start的禁止上线</br>

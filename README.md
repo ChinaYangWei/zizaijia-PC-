@@ -6,7 +6,7 @@
 4.否则一系列法律问题，本人不做相应的承担</br>
 使用:</br>
 1.node.js下载，下载xmapp集成软件，启动mysql和Apache服务器</br>
-&nbsp&nbsp node.js(基于后端服务器)</br>
+\n\n node.js(基于后端服务器)</br>
 &nbsp&nbsp问题:</br>
 &nbsp&nbsp1.报3306错误怎么办？查看任务管理器(Ctrl+Alt+Del)-服务-PID查看端口占用情况。如果有请查看并且查看是否为无用程序，否则可以暂停</br>
 &nbsp&nbsp2.数据如何用mysql导入？mysql的数据格式为(.sql)请查看我滞留的(.sql)文件在xmapp集成服务器软件点击mysql的右边的Admin进行网页化集成管理mysql和导入</br>

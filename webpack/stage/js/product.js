@@ -1,7 +1,6 @@
 import {$,createXhr} from './util/common'
-import './util/nav';
-import './util/blCart';
-import './util/footer';
+import '../common/js/nav';
+import '../common/js/footer';
 import '../css/base.css';
 import '../css/product.css';
 (function (){
@@ -49,7 +48,7 @@ xhr.onreadystatechange=function(){
       if(jiaju[i].jiaju_old==0){
         html+='<li>'
         html+='<div class="img"><img src="http://127.0.0.1:3000/images/dz.png" alt=""></div>'
-        html+='<a href="http://127.0.0.1:3000/detail.html?jiaju_id='+jiaju[i].jiaju_id+'">'
+        html+='<a href="http://127.0.0.1:3000/dist/pages/detail.html?jiaju_id='+jiaju[i].jiaju_id+'">'
         html+='<img src="'+jiaju[i].jiaju_img+'" alt="" class="product-img">'
       if(jiaju[i].jiaju_newProduct==1){
         html+='<img src="http://127.0.0.1:3000/images/xptg.jpg" style="display:block" alt="" class="new-product">'
@@ -63,7 +62,7 @@ xhr.onreadystatechange=function(){
         html+='<span class="old">'+"￥"+jiaju[i].jiaju_price.toFixed(2)+'</span></p></a></li>'
       }else if(jiaju[i].jiaju_old>=0.01||jiaju[i].jiaju_newProduct==0){
         html+='<li><div class="img"><img src="http://127.0.0.1:3000/images/dz.png" alt=""></div>'
-        html+='<a href="http://127.0.0.1:3000/detail.html?jiaju_id='+jiaju[i].jiaju_id+'">'
+        html+='<a href="http://127.0.0.1:3000/dist/pages/detail.html?jiaju_id='+jiaju[i].jiaju_id+'">'
         html+='<img src="'+jiaju[i].jiaju_img+'" alt="" class="product-img">'
       if(jiaju[i].jiaju_newProduct==1){
         html+='<img src="http://127.0.0.1:3000/images/xptg.jpg" style="display:block" alt="" class="new-product">'

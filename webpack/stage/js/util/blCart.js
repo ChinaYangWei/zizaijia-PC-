@@ -1,4 +1,4 @@
-import {$,createXhr} from './common';
+import {$,createXhr} from '../../js/util/common';
 export default(function(){
   var arr=[];
   var cart="";

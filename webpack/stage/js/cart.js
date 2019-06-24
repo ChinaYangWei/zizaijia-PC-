@@ -1,7 +1,6 @@
 import {$,createXhr} from './util/common'
-import './util/nav';
-import './util/blCart';
-import './util/footer';
+import '../common/js/footer';
+import '../common/js/nav';
 import '../css/base.css';
 import '../css/cart.css';
 (function(){

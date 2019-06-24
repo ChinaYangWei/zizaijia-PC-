@@ -1,6 +1,5 @@
-import './util/blCart';
-import './util/nav';
-import './util/footer';
+import '../common/js/nav';
+import '../common/js/footer';
 import '../css/base.css';
 import '../css/index.css';
 (function (){
@@ -92,4 +91,4 @@ import '../css/index.css';
     }
   }
   })();
-})
+})()

@@ -1,7 +1,6 @@
 ﻿import {$,createXhr} from './util/common';
-import './util/footer';
-import './util/nav';
-import './util/blCart';
+import '../common/js/nav';
+import '../common/js/footer';
 import '../css/base.css'
 import '../css/detail.css'
 (function(){
@@ -230,7 +229,7 @@ xhr.onreadystatechange=function(){
         document.querySelector(".drop_down-right>ul>li:nth-child(3) ul>.pr-number>span").innerHTML=shopp.length+"件商品"
       }
         $("onCart").onclick=function(){
-          window.open("http://127.0.0.1:3000/cart.html");
+          window.open("http://127.0.0.1:3000/dist/pages/cart.html");
         }
     }
   }

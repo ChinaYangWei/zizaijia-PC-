@@ -16,9 +16,9 @@
 四.启动</br>
 最后:在servser的文件夹中shift+鼠标右键启动cmd命令窗口然后输入 "node app.js"</br>
 ！！！注意，请先把xmapp的服务器相关的全部start然后检查mysql数据库中有没有zizaijia这个数据库哦！！！</br>
-本项目只供初学者学习和初学者浏览使用，请大神勿喷！
+本项目只供初学者学习和初学者浏览使用，请大神勿喷！</br>
 1.目录结构</br>
-![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/index1.PNG)
+![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/projectDir.PNG)
 </br>
 2.首页</br>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/index1.PNG)

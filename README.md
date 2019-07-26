@@ -1,4 +1,4 @@
-# zizaijia
+﻿# zizaijia
 一.恣在家(PC)项目</br>
 !分为webpack打包版,纯原生js版!<br>
 !此项目是未登录的商城系统项目!</br>
@@ -17,3 +17,5 @@
 最后:在servser的文件夹中shift+鼠标右键启动cmd命令窗口然后输入 "node app.js"</br>
 ！！！注意，请先把xmapp的服务器相关的全部start然后检查mysql数据库中有没有zizaijia这个数据库哦！！！</br>
 本项目只供初学者学习和初学者浏览使用，请大神勿喷！
+1.首页
+![image]()

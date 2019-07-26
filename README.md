@@ -29,6 +29,7 @@
 </br>
 3.导航</br>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/nav1.PNG)
+</hr>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/nav2.PNG)
 </br>
 4.商品展示</br>
@@ -36,13 +37,16 @@
 </br>
 5.商品详情</br>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/detail1.PNG)
+</hr>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/detail2.PNG)
 </br>
 6.购物车</br>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/cart1.PNG)
+</hr>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/cart2.PNG)
 </br>
 7.用户中心</br>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/user1.PNG)
+</hr>
 ![image](https://github.com/PgYw/zizaijia-PC-/blob/master/projectImg/user2.PNG)
 </br>
